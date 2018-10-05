@@ -24,13 +24,13 @@ namespace CG_13_2__High_School_
                 new Student() {FirstName = "Tanya", LastName = "Falls", Grade = 9, GPA = 1.7},
                 new Student() {FirstName = "Lindsay", LastName = "Webb", Grade = 3, GPA = 4.0},
                 new Student() {FirstName = "Molli", LastName = "Benz", Grade = 8, GPA = 3.5},
-                new Student() {FirstName = "William", LastName = "Vierling", Grade = 9, GPA = 3.1}
+                new Student() {FirstName = "William", LastName = "Smith", Grade = 11, GPA = 3.1}
             };
 
             //created list to keep all students with a GPA of 3.0 or greater and in grade 9 or higher
             //sorted students in list by grade first, then GPA, then last name, then first name
             var highGPA = students.Where(s => s.GPA >= 3 && s.Grade >= 9 ).
-                OrderBy(s => s.Grade).OrderBy(s => s.GPA).OrderBy(s => s.LastName).
+                OrderByDescending(s => s.Grade).OrderByDescending(s => s.GPA).OrderBy(s => s.LastName).
                 OrderBy(s => s.FirstName).ToList();
 
             //printed student info from highGPA list to console, formatted for legibility
